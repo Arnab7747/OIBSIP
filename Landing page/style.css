@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  
+  background-size: cover;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(to right, #2a0c5a, #0c0e1f);
+  color: #ffffff;
+  height: 65px;
+  padding: 1em;
+  font-weight: bolder;
+  font-size: 25px;
+}
+.menu li:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/*  Creating the menu button */
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 6px;
+  width: 32px;
+  border-radius: 3px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  /*  transforms the hamburger icon into a cross  */
+  transform: rotate(-45deg);
+}
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #9f9a9a;
+    height: 2.5em;
+    padding: 0.5em;
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: black;
+    background-color: #e8e8e8;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+.main{
+    font-size: 6em;
+    color: white;
+    
+    text-align: center;
+  
+}
+.background{
+    background-image: url(/aron-visuals-bZZp1PmHI0E-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 43rem;
+    
+}
+
+.inside{
+    margin: 0;
+    padding-top: 12rem;
+}
+.section2{
+    text-align: center;
+    padding: 2rem;
+    
+}
+
+.btn{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    align-items: center;
+    font-size: 16px;
+    margin: 6px 4px;
+    cursor: pointer;
+    border-radius: 25px;
+    
+}
+.image{
+  background-color: #0c0e1f;
+  background-image: url(/Untitled\ design.png);
+  
+}
+.sub1{
+    /* margin: 4rem; */
+    font-size: 3rem;
+    text-align: center;
+    margin: 5px;
+
+    
+}
+
+
+img{
+  
+  max-width: 100%;
+  height: auto;
+}
+
+footer{
+  text-align: center;
+  padding: 3px;
+  background-image: linear-gradient(to right, #2a0c5a, #0c0e1f);
+  color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 600px) {
+  .sub1{
+    font-size: 2rem;
+  }
+}
